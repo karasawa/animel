@@ -1,8 +1,10 @@
 import { memo } from 'react';
+import UrlCopyButton from '../atoms/UrlCopyButton';
 import Modal from "@mui/material/Modal";
 import { dialogState } from '../../recoil/atom';
 import { useRecoilState } from 'recoil';
-import Box from "@mui/material/AppBar";
+import Box from '@mui/material/Box';
+import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import {
@@ -18,6 +20,7 @@ import {
     TumblrIcon,
     EmailIcon,
   } from 'react-share';
+import CloseButton from '../atoms/CloseButton';
   
 
 const style = {
@@ -25,7 +28,7 @@ const style = {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 350,
+    width: 290,
     bgcolor: "background.paper",
     boxShadow: 24,
     borderRadius: 2,
@@ -43,27 +46,20 @@ const ShareMenuDialog = memo(() => {
             aria-describedby="modal-modal-description"
         >
             <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2" sx={{color: '#a7aaab'}}>
+                <Typography id="modal-modal-title" variant="h6" component="h2" sx={{color: '#a7aaab', textAlign: 'center'}}>
                 Animelをシェアする
                 </Typography>
                 <Divider />            
-                {/* <div style={{ margin: 10 }}>
-                    <TextField
-                        id="task"
-                        label="task"
-                        variant="outlined"
-                        size="small"
-                        style={{ width: 260 }}
-                    />
-                </div>   */}
-                <FacebookShareButton
-                    url=''
-                    quote=''
-                    className=''>
-                    <FacebookIcon
-                    size={48}
-                    round />
-                </FacebookShareButton>
+                <Box sx={{ margin: 1 }}>
+                    <FacebookShareButton
+                        url=''
+                        quote=''
+                        className=''>
+                        <FacebookIcon
+                        size={48}
+                        round />
+                    </FacebookShareButton>
+                </Box>
                 {/* <TwitterShareButton
                     url=''
                     quote=''
@@ -101,6 +97,9 @@ const ShareMenuDialog = memo(() => {
                     size={48}
                     round />
                 </EmailShareButton>                 */}
+                <UrlCopyButton />
+                <Divider />
+                <CloseButton />           
             </Box>              
         </Modal>
     );

@@ -2,10 +2,10 @@ import { memo } from 'react';
 import LinearScaleIcon from '@mui/icons-material/LinearScale';
 import { IconButton } from "@mui/material";
 import { dialogState } from '../../recoil/atom';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 
 const ShareMenuButton = memo(() => {
-    const [open, setOpen] = useRecoilState(dialogState);
+    const setOpen = useSetRecoilState(dialogState);
     return(
         <IconButton
         edge="end"

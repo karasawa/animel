@@ -6,6 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Header from '../organisms/Header';
 import SideMenu from '../organisms/SideMenu';
+import FormField from '../molecules/FormField';
 
 const drawerWidth = 240;
 
@@ -74,6 +75,9 @@ export default function Home(props: Props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
+        <Typography variant="h1" component="h2" sx={{color: '#6c1df2'}} >Animel</Typography>
+        <Typography variant="h5" component="h2" sx={{color: '#6c1df9'}} >アニメになにみる？</Typography>
+        <FormField />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

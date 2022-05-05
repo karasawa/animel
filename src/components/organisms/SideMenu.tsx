@@ -1,8 +1,6 @@
 import { memo } from 'react';
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -13,7 +11,7 @@ import Divider from '@mui/material/Divider';
 
 const SideMenu = () => {
     return(
-      <div>
+      <Box>
         <Toolbar />
         <Divider />
         <List>
@@ -26,7 +24,7 @@ const SideMenu = () => {
             </ListItem>
             ))}
         </List>
-      </div>     
+      </Box>     
     );
 };
 export default SideMenu;
