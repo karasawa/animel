@@ -1,19 +1,26 @@
 import { memo } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton } from "@mui/material";
-import { yearState, courState } from '../../recoil/atom';
-import { useRecoilValue } from 'recoil';
+import { yearState, courState, animeState } from '../../recoil/atom';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { getAnime } from '../../api/api';
 
 const SearchButton = memo(() => {
-    const getAnimeHandle = () => {
-        console.log('click')
-    }
+    const year = useRecoilValue(yearState);
+    const cour = useRecoilValue(courState);
+    const setAnime = useSetRecoilState(animeState);
+
+    const getAnimeHandle = async() => {
+        const animes = await getAnime(year, cour);
+        setAnime(animes);
+    };
+
     return(
         <IconButton
         edge="end"
         aria-label="search"
         onClick={getAnimeHandle}
-        sx={{background: '#6c1df2', color: '#fff'}}
+        sx={{m: 1, background: '#6c1df2', color: '#fff', '&:hover': {background: '#6c1df2'}}}
         >
             <SearchIcon />
         </IconButton>    

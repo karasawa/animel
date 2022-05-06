@@ -14,3 +14,8 @@ export const courState = atom<string>({
   key: "courState",
   default: '1',
 });
+
+export const animeState = atom<Array<any>>({
+  key: "animeState",
+  default: [],
+});
