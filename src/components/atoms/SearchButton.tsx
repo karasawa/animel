@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton } from "@mui/material";
 import { yearState, courState, animeState } from '../../recoil/atom';
@@ -9,6 +9,10 @@ const SearchButton = memo(() => {
     const year = useRecoilValue(yearState);
     const cour = useRecoilValue(courState);
     const setAnime = useSetRecoilState(animeState);
+
+    useEffect(() => {
+        getAnimeHandle()
+    }, []);
 
     const getAnimeHandle = async() => {
         const animes = await getAnime(year, cour);

@@ -13,7 +13,7 @@ const FormField = memo(() => {
     const [cour, setCour] = useRecoilState(courState);
 
   return (
-    <Box sx={{paddingTop: 3, alignItems: 'center'}} >
+    <Box sx={{paddingTop: 3, paddingBottom: 3, alignItems: 'center'}} >
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-standard-label1">西暦</InputLabel>
         <Select

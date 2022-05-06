@@ -9,7 +9,7 @@ const ItemList = () => {
     const anime = useRecoilValue(animeState);
     console.log(anime)
     return(
-        <Box sx={{}}>
+        <Box sx={{display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}}>
             {anime.map((data) => (
                 <ItemCard data={data}/>
             ))}

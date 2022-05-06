@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import LinearScaleIcon from '@mui/icons-material/LinearScale';
+import ShareIcon from '@mui/icons-material/Share';
 import { IconButton } from "@mui/material";
 import { dialogState } from '../../recoil/atom';
 import { useSetRecoilState } from 'recoil';
@@ -12,7 +12,7 @@ const ShareMenuButton = memo(() => {
         aria-label="linearScale"
         onClick={() => setOpen(true)}
         >
-            <LinearScaleIcon />
+            <ShareIcon />
         </IconButton>    
     );
 });
