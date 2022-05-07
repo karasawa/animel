@@ -9,7 +9,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Divider from '@mui/material/Divider';
 
-const SideMenu = () => {
+const SideMenu = memo(() => {
     return(
       <Box>
         <Toolbar />
@@ -26,5 +26,5 @@ const SideMenu = () => {
         </List>
       </Box>     
     );
-};
+});
 export default SideMenu;

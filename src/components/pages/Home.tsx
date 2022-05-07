@@ -8,14 +8,12 @@ import Header from '../organisms/Header';
 import SideMenu from '../organisms/SideMenu';
 import FormField from '../molecules/FormField';
 import ItemList from '../organisms/ItemList';
+import SnackBar from '../atoms/SnackBar';
+import GrainIcon from '@mui/icons-material/Grain';
 
 const drawerWidth = 240;
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
 }
 
@@ -44,14 +42,13 @@ export default function Home(props: Props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -76,10 +73,20 @@ export default function Home(props: Props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography variant="h1" component="h2" sx={{color: '#6c1df2'}} >Animel</Typography>
+        <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <Box>            
+                <GrainIcon sx={{fontSize: 85, color: '#6c1df2'}} />
+            </Box>
+            <Box>
+                <Typography sx={{fontSize: 80, color: '#6c1df2'}} >
+                    Animel
+                </Typography>
+            </Box>
+        </Box>    
         <Typography variant="h5" component="h2" sx={{color: '#6c1df9'}} >アニメなにみる？</Typography>
         <FormField />
         <ItemList />
+        <SnackBar />
       </Box>
     </Box>
   );

@@ -9,7 +9,7 @@ const ShareMenuButton = memo(() => {
     return(
         <IconButton
         edge="end"
-        aria-label="linearScale"
+        aria-label="share"
         onClick={() => setOpen(true)}
         >
             <ShareIcon />

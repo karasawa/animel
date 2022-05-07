@@ -11,7 +11,7 @@ const SearchButton = memo(() => {
     const setAnime = useSetRecoilState(animeState);
 
     useEffect(() => {
-        getAnimeHandle()
+        getAnimeHandle();
     }, []);
 
     const getAnimeHandle = async() => {

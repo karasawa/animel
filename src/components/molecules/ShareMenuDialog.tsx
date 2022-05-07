@@ -4,31 +4,25 @@ import Modal from "@mui/material/Modal";
 import { dialogState } from '../../recoil/atom';
 import { useRecoilState } from 'recoil';
 import Box from '@mui/material/Box';
-import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import {
     FacebookShareButton,
-    LinkedinShareButton,
     TwitterShareButton,
     EmailShareButton,
-    TumblrShareButton,
-  
     FacebookIcon,
     TwitterIcon,
-    LinkedinIcon,
-    TumblrIcon,
     EmailIcon,
   } from 'react-share';
 import CloseButton from '../atoms/CloseButton';
-  
 
 const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 290,
+    height: 270,
+    width: 250,
     bgcolor: "background.paper",
     boxShadow: 24,
     borderRadius: 2,
@@ -37,6 +31,9 @@ const style = {
 
 const ShareMenuDialog = memo(() => {
     const [open, setOpen] = useRecoilState<boolean>(dialogState);
+
+    const shareURL = 'https://github.com/karasawa/animel';
+    const title = "Animel | アニメなにみる？";
 
     return(
         <Modal
@@ -49,58 +46,38 @@ const ShareMenuDialog = memo(() => {
                 <Typography id="modal-modal-title" variant="h6" component="h2" sx={{color: '#a7aaab', textAlign: 'center'}}>
                 Animelをシェアする
                 </Typography>
-                <Divider />            
-                <Box sx={{ margin: 1 }}>
+                <Divider />
+                <Box sx={{marginTop: 3, marginBottom: 3, display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}}>            
                     <FacebookShareButton
-                        url=''
-                        quote=''
-                        className=''>
+                        url={shareURL}
+                        quote={title}
+                    >
                         <FacebookIcon
                         size={48}
                         round />
                     </FacebookShareButton>
-                </Box>
-                {/* <TwitterShareButton
-                    url=''
-                    quote=''
-                    className=''>
-                    <TwitterIcon
-                    size={48}
-                    round />
-                </TwitterShareButton>
-                <LinkedinShareButton
-                    url=''
-                    quote=''
-                    windowWidth={750}
-                    windowHeight={600}
-                    className=''>
-                    <LinkedinIcon
-                    size={48}
-                    round />
-                </LinkedinShareButton>
-                <TumblrShareButton
-                    url={shareUrl}
-                    title={title}
-                    windowWidth={660}
-                    windowHeight={460}
-                    className={classes.snsShareButton}>
-                    <TumblrIcon
-                    size={48}
-                    round />
-                </TumblrShareButton>
-                <EmailShareButton
-                    url={shareUrl}
-                    subject={title}
-                    body="body"
-                    className={classes.snsShareButton}>
-                    <EmailIcon
-                    size={48}
-                    round />
-                </EmailShareButton>                 */}
+                    <TwitterShareButton
+                        url={shareURL}
+                        title={title}
+                    >
+                        <TwitterIcon
+                        size={48}
+                        round />
+                    </TwitterShareButton>
+                    <EmailShareButton
+                        url={shareURL}
+                        subject={title}
+                        body="body"
+                    >
+                        <EmailIcon
+                        size={48}
+                        round />
+                    </EmailShareButton>
+                </Box>                   
                 <UrlCopyButton />
                 <Divider />
                 <CloseButton />           
-            </Box>              
+            </Box>      
         </Modal>
     );
 });

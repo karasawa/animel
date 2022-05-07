@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShareMenuDialog from "../molecules/ShareMenuDialog";
+import GrainIcon from '@mui/icons-material/Grain';
 
 const Header = memo(() => {
   const drawerWidth = 240;
@@ -29,6 +30,7 @@ const Header = memo(() => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
+          <GrainIcon sx={{m: -0.3, fontSize: 20}}/>
           Animel
         </Typography>
         <ShareMenuButton />

@@ -1,11 +1,10 @@
-import { allowedNodeEnvironmentFlags } from 'process';
 import { memo } from 'react';
 import ItemCard from '../atoms/ItemCard';
 import { animeState } from '../../recoil/atom';
 import { useRecoilValue } from 'recoil';
 import Box from "@mui/material/Box";
 
-const ItemList = () => {
+const ItemList = memo(() => {
     const anime = useRecoilValue(animeState);
     console.log(anime)
     return(
@@ -15,5 +14,5 @@ const ItemList = () => {
             ))}
         </Box>
     );
-};
+});
 export default ItemList;

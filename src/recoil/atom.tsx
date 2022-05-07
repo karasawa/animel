@@ -19,3 +19,18 @@ export const animeState = atom<Array<any>>({
   key: "animeState",
   default: [],
 });
+
+interface snackbar {
+  open: boolean;
+  vertical: 'top' | 'bottom';
+  horizontal: 'left' | 'center' | 'right';
+};
+
+export const snackBarState = atom<snackbar>({
+  key: "snackBarState",
+  default: {
+    open: false,
+    vertical: 'top',
+    horizontal: 'left',
+  }
+});

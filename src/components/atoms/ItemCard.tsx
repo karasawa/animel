@@ -2,8 +2,6 @@ import { memo } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import AnimeLinkButton from './AnimeLinkButton';
 import {
@@ -27,15 +25,17 @@ const ItemCard: React.VFC<Props> = memo(({data}) => {
           {data.title_short1}
         </Typography>
         <Typography variant="body2" sx={{color: 'blue'}}>
-          #{data.twitter_hash_tag}
+            <a href={'https://twitter.com/search?q=%23' + data.twitter_hash_tag} target="_blank" rel="noopener noreferrer">
+                #{data.twitter_hash_tag}
+            </a>
         </Typography>
       </CardContent>
       <CardActions sx={{display: 'flex', justifyContent: 'space-evenly'}}>
         <AnimeLinkButton data={data}/>
         <TwitterShareButton
-            url=''
-            // quote=''
-            className=''>
+            url={data.public_url}
+            title={data.title}
+        >
             <TwitterIcon
             size={42}
             round />
