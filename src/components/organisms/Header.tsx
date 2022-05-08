@@ -5,7 +5,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import ShareMenuDialog from "../molecules/ShareMenuDialog";
 import GrainIcon from '@mui/icons-material/Grain';
 
 const Header = memo(() => {
@@ -34,7 +33,6 @@ const Header = memo(() => {
           Animel
         </Typography>
         <ShareMenuButton />
-        <ShareMenuDialog />
       </Toolbar>
     </AppBar>
 );
