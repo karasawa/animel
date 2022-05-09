@@ -12,7 +12,7 @@ export const yearState = atom<string>({
 
 export const courState = atom<string>({
   key: "courState",
-  default: '1',
+  default: '2',
 });
 
 export const animeState = atom<Array<any>>({

@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Header from '../organisms/Header';
 import ShareMenuDialog from '../organisms/ShareMenuDialog';
 import HomeDrawer from '../organisms/HomeDrawer';
+import SnackBar from '../atoms/SnackBar';
 
 const drawerWidth = 240;
 
@@ -20,6 +21,7 @@ const Setting = memo(() => {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
+        <SnackBar />
       </Box>
     </Box>
   );
