@@ -1,9 +1,9 @@
-import './App.css';
-import Home from './components/pages/Home';
-import Introduction from './components/pages/Introduction';
-import Setting from './components/pages/Setting';
-import { RecoilRoot } from 'recoil';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import "./App.css";
+import Home from "./components/pages/Home";
+import Introduction from "./components/pages/Introduction";
+import Setting from "./components/pages/Setting";
+import { RecoilRoot } from "recoil";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           </Routes>
         </Router>
       </div>
-    </RecoilRoot>  
+    </RecoilRoot>
   );
 }
 

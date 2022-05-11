@@ -1,8 +1,8 @@
-import { memo } from 'react';
-import Snackbar from '@mui/material/Snackbar';
-import { useRecoilState } from 'recoil';
-import { snackBarState } from '../../recoil/atom';
-import Box from '@mui/material/Box';
+import { memo } from "react";
+import Snackbar from "@mui/material/Snackbar";
+import { useRecoilState } from "recoil";
+import { snackBarState } from "../../recoil/atom";
+import Box from "@mui/material/Box";
 
 const SnackBar = memo(() => {
   const [state, setState] = useRecoilState(snackBarState);
